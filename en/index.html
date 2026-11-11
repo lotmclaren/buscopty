@@ -32,6 +32,7 @@
   "url": "https://www.buscopty.com/en/",
   "logo": "https://www.buscopty.com/assets/logo-busco.png",
   "telephone": "+507-6700-4959",
+  "email": "info@buscopty.com",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -80,6 +81,7 @@
   </header>
 
   <section class="wrap hero-in">
+    <div class="hero-copy">
     <p class="eyebrow">Transportation in Panama · Private & VIP</p>
     <h1>Travel Panama<br>on time and in style.</h1>
     <p class="lead">Toyota Hiace, Toyota Coaster and VIP Cadillac Escalade service with professional drivers. Airport transfers, corporate travel, events, tours and trips across the country.</p>
@@ -89,6 +91,35 @@
       <span class="wa-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
     <p class="wa-note"><span class="live"></span> Fast replies · Same-day quotes · English spoken</p>
+    </div>
+    <form class="form-card" id="contact" action="https://api.web3forms.com/submit" method="POST" novalidate
+      data-sending="Sending…" data-error="Something went wrong. Please try again or email info@buscopty.com.">
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New request from buscopty.com (EN)">
+      <input type="hidden" name="from_name" value="BusCo Website">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-head">
+        <h2>Send us a message</h2>
+        <p>Tell us about your trip and we'll send your quote the same day.</p>
+      </div>
+      <div class="fields">
+        <label class="f full"><span>Full name</span><input name="name" type="text" autocomplete="name" required></label>
+        <label class="f"><span>Phone / WhatsApp</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+507" required></label>
+        <label class="f"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="f full"><span>Service</span><select name="service" required><option value="" disabled selected>Choose a service</option><option>Airport transfer</option><option>Toyota Hiace (up to 15 pax)</option><option>Toyota Coaster (up to 30 pax)</option><option>VIP Cadillac Escalade</option><option>Tour / sightseeing</option><option>Event / wedding</option><option>Corporate transportation</option><option>Other</option></select></label>
+        <label class="f"><span>Travel date</span><input name="date" type="date"></label>
+        <label class="f"><span>Passengers</span><input name="passengers" type="number" min="1" max="60" inputmode="numeric" placeholder="1"></label>
+        <label class="f full"><span>Message</span><textarea name="message" rows="3" placeholder="Route, times and any details about your trip"></textarea></label>
+      </div>
+      <button class="send" type="submit"><span>Send message</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <p class="form-alt">or email us at <a href="mailto:info@buscopty.com">info@buscopty.com</a></p>
+      <p class="form-error" role="alert" hidden></p>
+      <div class="form-ok" hidden>
+        <span class="ok-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Message sent!</h3><p>Thank you, we'll get back to you very soon. For anything urgent, message us on WhatsApp.</p>
+        <button type="button" class="again">Send another message</button>
+      </div>
+    </form>
   </section>
 
   <footer class="trust">
@@ -100,5 +131,6 @@
     </div>
   </footer>
 </main>
+<script src="/form.js" defer></script>
 </body>
 </html>

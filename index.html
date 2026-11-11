@@ -32,6 +32,7 @@
   "url": "https://www.buscopty.com/",
   "logo": "https://www.buscopty.com/assets/logo-busco.png",
   "telephone": "+507-6700-4959",
+  "email": "info@buscopty.com",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -80,6 +81,7 @@
   </header>
 
   <section class="wrap hero-in">
+    <div class="hero-copy">
     <p class="eyebrow">Transporte privado · Ciudad de Panamá</p>
     <h1>Viaja por Panamá<br>con puntualidad y estilo.</h1>
     <p class="lead">Toyota Hiace, Toyota Coaster y servicio VIP en Cadillac Escalade, con chofer profesional. Aeropuerto, empresas, eventos, turismo y viajes al interior.</p>
@@ -89,6 +91,35 @@
       <span class="wa-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
     <p class="wa-note"><span class="live"></span> Respondemos rápido · Cotización el mismo día</p>
+    </div>
+    <form class="form-card" id="contact" action="https://api.web3forms.com/submit" method="POST" novalidate
+      data-sending="Enviando…" data-error="No se pudo enviar. Inténtalo de nuevo o escríbenos a info@buscopty.com.">
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="Nueva solicitud desde buscopty.com">
+      <input type="hidden" name="from_name" value="Web BusCo">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-head">
+        <h2>Escríbenos</h2>
+        <p>Cuéntanos tu viaje y te enviamos la cotización el mismo día.</p>
+      </div>
+      <div class="fields">
+        <label class="f full"><span>Nombre completo</span><input name="name" type="text" autocomplete="name" required></label>
+        <label class="f"><span>Teléfono / WhatsApp</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+507" required></label>
+        <label class="f"><span>Correo electrónico</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="f full"><span>Servicio</span><select name="service" required><option value="" disabled selected>Elige un servicio</option><option>Traslado al aeropuerto</option><option>Toyota Hiace (hasta 15 pax)</option><option>Toyota Coaster (hasta 30 pax)</option><option>VIP Cadillac Escalade</option><option>Tour / turismo</option><option>Evento / boda</option><option>Transporte corporativo</option><option>Otro</option></select></label>
+        <label class="f"><span>Fecha del viaje</span><input name="date" type="date"></label>
+        <label class="f"><span>Pasajeros</span><input name="passengers" type="number" min="1" max="60" inputmode="numeric" placeholder="1"></label>
+        <label class="f full"><span>Mensaje</span><textarea name="message" rows="3" placeholder="Ruta, horario y cualquier detalle de tu viaje"></textarea></label>
+      </div>
+      <button class="send" type="submit"><span>Enviar mensaje</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <p class="form-alt">o escríbenos a <a href="mailto:info@buscopty.com">info@buscopty.com</a></p>
+      <p class="form-error" role="alert" hidden></p>
+      <div class="form-ok" hidden>
+        <span class="ok-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>¡Mensaje enviado!</h3><p>Gracias, te respondemos muy pronto. Si es urgente, escríbenos por WhatsApp.</p>
+        <button type="button" class="again">Enviar otro mensaje</button>
+      </div>
+    </form>
   </section>
 
   <footer class="trust">
@@ -100,5 +131,6 @@
     </div>
   </footer>
 </main>
+<script src="/form.js" defer></script>
 </body>
 </html>
