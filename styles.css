@@ -70,3 +70,12 @@ h1{font-size:clamp(36px,5.6vw,72px);line-height:1.06;font-weight:600;letter-spac
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
 }
+
+/* Selector de idioma */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lang{display:flex;padding:4px;border-radius:999px;background:rgba(12,16,36,.45);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px)}
+.lang a{font-size:13px;font-weight:600;letter-spacing:.06em;padding:7px 14px;border-radius:999px;color:rgba(255,255,255,.75);transition:background .2s,color .2s}
+.lang a:hover{color:#fff}
+.lang a[aria-current="page"]{background:#fff;color:var(--ink-dark)}
+.wa-txt b{white-space:nowrap}
+@media (max-width:640px){ html[lang="en"] .wa-txt b{font-size:clamp(17px,5.2vw,22px)} .wa-btn{gap:12px} }
