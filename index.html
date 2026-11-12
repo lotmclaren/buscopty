@@ -103,8 +103,9 @@
         <p>Cuéntanos tu viaje y te enviamos la cotización el mismo día.</p>
       </div>
       <div class="fields">
-        <label class="f full"><span>Nombre completo</span><input name="name" type="text" autocomplete="name" required></label>
-        <div class="f"><span id="tel-l">Teléfono / WhatsApp</span>
+        <label class="f"><span>Nombre completo</span><input name="name" type="text" autocomplete="name" required></label>
+        <label class="f"><span>Correo electrónico</span><input name="email" type="email" autocomplete="email" required></label>
+        <div class="f full"><span id="tel-l">Teléfono / WhatsApp</span>
           <div class="tel">
             <button type="button" class="cc" aria-haspopup="listbox" aria-expanded="false"><img src="https://flagcdn.com/w40/pa.png" alt="" width="22" height="16"><b>+507</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
             <input type="tel" autocomplete="tel-national" inputmode="tel" placeholder="6000-0000" aria-labelledby="tel-l" required>
@@ -115,7 +116,6 @@
           </div>
           <input type="hidden" name="phone">
         </div>
-        <label class="f"><span>Correo electrónico</span><input name="email" type="email" autocomplete="email" required></label>
         <label class="f full"><span>Servicio</span><select name="service" required><option value="" disabled selected>Elige un servicio</option><option>Traslado al aeropuerto</option><option>Toyota Hiace (hasta 15 pax)</option><option>Toyota Coaster (hasta 30 pax)</option><option>VIP Cadillac Escalade</option><option>Tour / turismo</option><option>Evento / boda</option><option>Transporte corporativo</option><option>Otro</option></select></label>
         <label class="f"><span>Fecha del viaje</span><input name="date" type="date"></label>
         <label class="f"><span>Pasajeros</span><input name="passengers" type="number" min="1" max="60" inputmode="numeric" placeholder="1"></label>
