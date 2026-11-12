@@ -56,7 +56,8 @@
   };
 
   const open = () => {
-    render(); search.value = '';
+    if (search.value) { search.value = ''; render(); }
+    ul.querySelectorAll('li[data-iso]').forEach(li => li.setAttribute('aria-selected', li.dataset.iso === current.iso));
     panel.hidden = false; btn.setAttribute('aria-expanded', 'true');
     ul.querySelector('[aria-selected=true]')?.scrollIntoView({ block: 'nearest' });
     if (matchMedia('(hover:hover)').matches) search.focus();
@@ -81,6 +82,7 @@
   input.addEventListener('input', sync);
 
   select(list[0]); // Panamá por defecto
+  render(); // la lista se arma una sola vez para que las banderas no parpadeen
   // Precarga las banderas más usadas para que la lista abra sin huecos
   const warm = () => list.slice(0, 20).forEach(c => { new Image().src = flag(c.iso); });
   'requestIdleCallback' in window ? requestIdleCallback(warm) : setTimeout(warm, 1500);
