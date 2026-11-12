@@ -39,6 +39,7 @@
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json.success === false) throw new Error(json.message || res.status);
       form.classList.add('sent'); ok.hidden = false; form.reset();
+      form.querySelector('.tel input[type=tel]')?.dispatchEvent(new Event('input'));
     } catch (err) {
       showError(form.dataset.error);
     } finally {

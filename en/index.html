@@ -104,7 +104,17 @@
       </div>
       <div class="fields">
         <label class="f full"><span>Full name</span><input name="name" type="text" autocomplete="name" required></label>
-        <label class="f"><span>Phone / WhatsApp</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+507" required></label>
+        <div class="f"><span id="tel-l">Phone / WhatsApp</span>
+          <div class="tel">
+            <button type="button" class="cc" aria-haspopup="listbox" aria-expanded="false"><img src="https://flagcdn.com/w40/pa.png" alt="" width="22" height="16"><b>+507</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+            <input type="tel" autocomplete="tel-national" inputmode="tel" placeholder="6000-0000" aria-labelledby="tel-l" required>
+            <div class="cc-panel" data-empty="No results" hidden>
+              <input type="search" placeholder="Search country or code" aria-label="Search country or code" autocomplete="off">
+              <ul role="listbox" aria-label="Phone / WhatsApp"></ul>
+            </div>
+          </div>
+          <input type="hidden" name="phone">
+        </div>
         <label class="f"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
         <label class="f full"><span>Service</span><select name="service" required><option value="" disabled selected>Choose a service</option><option>Airport transfer</option><option>Toyota Hiace (up to 15 pax)</option><option>Toyota Coaster (up to 30 pax)</option><option>VIP Cadillac Escalade</option><option>Tour / sightseeing</option><option>Event / wedding</option><option>Corporate transportation</option><option>Other</option></select></label>
         <label class="f"><span>Travel date</span><input name="date" type="date"></label>
@@ -131,6 +141,7 @@
     </div>
   </footer>
 </main>
+<script src="/phone.js" defer></script>
 <script src="/form.js" defer></script>
 </body>
 </html>
