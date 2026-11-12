@@ -51,7 +51,7 @@
     const items = f ? list.filter(c => fold(c.name).includes(f) || c.dial.startsWith(f) || c.iso === f) : list;
     ul.innerHTML = items.map((c, i) =>
       `<li role="option" data-iso="${c.iso}" aria-selected="${c === current}"${!f && i === TOP - 1 ? ' class="sep"' : ''}>` +
-      `<img src="${flag(c.iso)}" alt="" loading="lazy" width="22" height="16"><span>${c.name}</span><em>+${c.dial}</em></li>`
+      `<img src="${flag(c.iso)}" alt="" ${i < 20 ? '' : 'loading="lazy" '}width="22" height="16"><span>${c.name}</span><em>+${c.dial}</em></li>`
     ).join('') || `<li class="empty">${panel.dataset.empty}</li>`;
   };
 
@@ -81,4 +81,8 @@
   input.addEventListener('input', sync);
 
   select(list[0]); // Panamá por defecto
+  // Precarga las banderas más usadas para que la lista abra sin huecos
+  const warm = () => list.slice(0, 20).forEach(c => { new Image().src = flag(c.iso); });
+  'requestIdleCallback' in window ? requestIdleCallback(warm) : setTimeout(warm, 1500);
+  btn.addEventListener('pointerenter', warm, { once: true });
 })();
